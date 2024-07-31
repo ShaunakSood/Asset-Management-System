@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Management System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9; /* light gray background */
+        }
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333; /* dark gray text */
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #222; /* dark blue text */
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .hero .subtitle {
+            font-size: 24px;
+            color: #555; /* medium gray text */
+            margin-top: 20px;
+        }
+        .features {
+            padding: 20px;
+            background-color: #fff; /* white background */
+            border: 1px solid #ddd; /* light gray border */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd; /* light gray border */
+        }
+        .feature:last-child {
+            border-bottom: none;
+        }
+        .feature i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #666; /* dark gray icon */
+        }
+        .feature h2 {
+            color: #333; /* dark gray text */
+            font-weight: bold;
+            margin-top: 0;
+        }
+        .feature p {
+            color: #555; /* medium gray text */
+            margin-bottom: 20px;
+        }
+        .login-register {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .login-register button {
+            width: 15%;
+            margin: 10px;
+            padding: 30px 80px ; /* removed extra padding */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex; /* added display: flex */
+            justify-content: center; /* added justify-content: center */
+        }
+        .login-register button:first-child {
+            background-color: #337ab7; /* blue button */
+            color: #fff; /* white text */
+        }
+        .login-register button:last-child {
+            background-color: #4CAF50; /* green button */
+            color: #fff; /* white text */
+        }
+        .login-register button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Asset Management System</h1>
+    </div>
+    <div class="features">
+        <div class="feature">
+            <i class="fas fa-database"></i>
+            <h2>Centralized Asset Database</h2>
+            <p>Store and manage all your assets in one place</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-search"></i>
+            <h2>Advanced Search and Filtering</h2>
+            <p>Quickly find and filter assets based on custom attributes</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-lock"></i>
+            <h2>Secure and Accessible</h2>
+            <p>Ensure data security and accessibility with user roles and permissions</p>
+        </div>
+    </div>
+    <div class="login-register">
+        <a href="{{ url_for('login') }}"><button class="btn btn-primary">Login</button></a>
+        <a href="{{ url_for('register') }}"><button class="btn btn-success">Get Started</button></a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2

@@ -1,0 +1,50 @@
+<!-- Add a CSS framework like Bootstrap to style the page -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<div class="container">
+  <h1 class="display-4">Search Results</h1>
+
+  <!-- Search form with a more modern design -->
+  <form action="" method="post" class="form-inline mb-3">
+    {{ form.hidden_tag() }}
+    <div class="input-group">
+      {{ form.search(size=20, class="form-control") }}
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Export to CSV button with a more modern design -->
+  <form action="{{ url_for('export_csv') }}" method="post" class="form-inline mb-3">
+    {{ form.hidden_tag() }}
+    <input type="hidden" name="search" value="{{ form.search.data }}">
+    <button type="submit" class="btn btn-success">Export to CSV</button>
+  </form>
+
+  <!-- Search results table with a more modern design -->
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for asset in assets %}
+        <tr>
+          <td>{{ asset.name }} </td>
+          <td>{{ asset.location }}</td>
+          <td>{{ asset.description }}</td>
+          <td>{{ asset.category }}</td>
+          <td>{{ asset.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
